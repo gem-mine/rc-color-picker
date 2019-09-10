@@ -32,6 +32,17 @@
     bottom: 0;
     height: (30px - 5px) / 2;
   }
+  &-preset {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    display: inline-block;
+    margin-right: calc((216px - 16px - 8 * 16px) / 7);
+    cursor: pointer;
+  }
+  &-preset:nth-child(8n) {
+    margin-right: 0;
+  }
 }
 .@{prefixClassName}-wrap-has-alpha {
   .@{prefixClassName}-wrap-ribbon {

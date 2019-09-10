@@ -8,6 +8,7 @@ import Preview from './Preview'
 import Ribbon from './Ribbon'
 import Alpha from './Alpha'
 import Params from './Params'
+import Preset from './Preset'
 
 import cx from 'classnames'
 
@@ -115,7 +116,7 @@ export default class Panel extends React.Component {
   };
 
   render () {
-    const { prefixCls, enableAlpha } = this.props
+    const { prefixCls, enableAlpha, presetColors } = this.props
     const { color, alpha } = this.state
 
     const wrapClasses = cx({
@@ -168,6 +169,11 @@ export default class Panel extends React.Component {
               enableAlpha={this.props.enableAlpha}
             />
           </div>
+          <Preset
+            rootPrefixCls={prefixCls}
+            presetColors={presetColors}
+            onClick={this.handleChange}
+          />
         </div>
       </div>
     )
@@ -187,7 +193,8 @@ Panel.propTypes = {
   onFocus: PropTypes.func,
   onMount: PropTypes.func,
   prefixCls: PropTypes.string,
-  style: PropTypes.object
+  style: PropTypes.object,
+  presetColors: PropTypes.array
 }
 
 Panel.defaultProps = {
@@ -201,5 +208,8 @@ Panel.defaultProps = {
   onFocus: noop,
   onMount: noop,
   prefixCls: 'rc-color-picker-panel',
-  style: {}
+  style: {},
+  presetColors: ['#D0021B', '#F5A623', '#F8E71C', '#8B572A', '#7ED321', '#417505',
+    '#BD10E0', '#9013FE', '#4A90E2', '#50E3C2', '#B8E986', '#000000',
+    '#4A4A4A', '#9B9B9B', '#FFFFFF']
 }

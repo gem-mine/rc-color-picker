@@ -51,7 +51,7 @@ ReactDOM.render(
 , mountNode)
 ```
 
-### custom-trugger
+### custom-trigger
 ```jsx
 import '@gem-mine/rc-color-picker/lib/style/'
 import ColorPicker from '@gem-mine/rc-color-picker'
@@ -83,9 +83,41 @@ function onChange(obj) {
 
 ReactDOM.render(
   <div style={{ backgroundColor: '#ddd', padding: 20 }}>
-    <ColorPickerPanel enableAlpha={false} color={'#D0021B'} onChange={onChange} mode="RGB" />
+    <ColorPickerPanel
+      enableAlpha={false}
+      color={'#D0021B'}
+      onChange={onChange}
+      mode="RGB"
+    />
     <hr />
-    <ColorPickerPanel alpha={80} color={'#D0021B'} onChange={onChange} mode="HSB" />
+    <ColorPickerPanel
+      alpha={80}
+      color={'#D0021B'}
+      onChange={onChange}
+      mode="HSB"
+    />
+  </div>
+, mountNode)
+```
+
+### no-presetColors
+```jsx
+import '@gem-mine/rc-color-picker/lib/style/'
+import { Panel as ColorPickerPanel } from '@gem-mine/rc-color-picker'
+
+function onChange(obj) {
+  console.log(obj);
+}
+
+ReactDOM.render(
+  <div style={{ backgroundColor: '#ddd', padding: 20 }}>
+    <ColorPickerPanel
+      enableAlpha={false}
+      color={'#D0021B'}
+      onChange={onChange}
+      mode="RGB"
+      presetColors={[]}
+    />
   </div>
 , mountNode)
 ```
@@ -117,11 +149,24 @@ ReactDOM.render(
       <span className="rc-color-picker-trigger" />
     </ColorPicker>
     <h4>topRight</h4>
-    <ColorPicker color={'#F10'} onChange={changeHandler} placement="topRight" />
+    <ColorPicker
+      color={'#F10'}
+      onChange={changeHandler}
+      placement="topRight"
+    />
     <h4>bottomLeft</h4>
-    <ColorPicker color={'#0ad'} alpha={50} onChange={changeHandler} placement="bottomLeft" />
+    <ColorPicker
+      color={'#0ad'}
+      alpha={50}
+      onChange={changeHandler}
+      placement="bottomLeft"
+    />
     <h4>bottomRight</h4>
-    <ColorPicker color={'#0F0'} onChange={changeHandler} placement="bottomRight" />
+    <ColorPicker
+      color={'#0F0'}
+      onChange={changeHandler}
+      placement="bottomRight"
+    />
   </div>
 , mountNode)
 ```
@@ -165,3 +210,4 @@ ReactDOM.render(
 | onChange | Function | | when select color trigger |
 | onFocus | Function | | when picker focus trigger |
 | style | Object | `{}` | root node CSS style |
+| presetColors | string[] | \['#D0021B', '#F5A623', '#F8E71C', '#8B572A', '#7ED321', '#417505', '#BD10E0', '#9013FE', '#4A90E2', '#50E3C2', '#B8E986', '#000000', '#4A4A4A', '#9B9B9B', '#FFFFFF'\] | preset colors to be selected |
