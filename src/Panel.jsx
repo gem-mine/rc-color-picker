@@ -158,7 +158,7 @@ export default class Panel extends React.Component {
               />
             </div>
           </div>
-          <div className={`${prefixCls}-wrap`} style={{ height: 40, marginTop: 6 }}>
+          <div className={`${prefixCls}-wrap`} style={{ height: 50 }}>
             <Params
               rootPrefixCls={prefixCls}
               color={color}

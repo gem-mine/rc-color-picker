@@ -1,19 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cx from 'classnames'
 import Color from './helpers/color'
 
 export default class Preset extends React.Component {
   render () {
     const { presetColors, onClick, rootPrefixCls } = this.props
+    const presetClasses = cx({
+      [`${rootPrefixCls}-wrap`]: true,
+      [`${rootPrefixCls}-preset`]: true
+    })
 
     return presetColors.length
       ? (
-        <div className={`${rootPrefixCls}-wrap`} style={{ height: '40px', padding: '6px 8px' }}>
+        <div className={presetClasses}>
           {presetColors.map(color => {
             return (
               <div key={color} className={`${rootPrefixCls}-wrap-preset`} onClick={() => onClick(new Color(color))}>
                 <span>
-                  <div title={color} style={{ backgroundColor: color, width: '100%', height: '100%' }} />
+                  <div title={color} className={`${rootPrefixCls}-preset-block`} style={{ backgroundColor: color }} />
                 </span>
               </div>
             )
@@ -24,7 +29,7 @@ export default class Preset extends React.Component {
   }
 }
 
-Preset.PropTypes = {
+Preset.propTypes = {
   rootPrefixCls: PropTypes.string,
   presetColors: PropTypes.array,
   onClick: PropTypes.func
