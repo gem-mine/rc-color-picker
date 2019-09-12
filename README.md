@@ -27,9 +27,14 @@ npm install @gem-mine/rc-color-picker --save
 
 # 能在ie9+下浏览本站，修改代码后自动重新构建，且能在ie10+运行热更新，页面会自动刷新
 npm run start
+
+# 构建生产环境静态文件，用于发布文档
+npm run site
 ```
 
 ## 代码演示
+
+在线示例：https://gem-mine.github.io/rc-color-picker/site/
 
 ### anim
 ```jsx
