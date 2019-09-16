@@ -58,7 +58,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "fs-extra": "^0.26.7",
     "md-tools-cli": "^0.1.11",
-    "md-tools-theme-component-react": "^0.1.17",
+    "md-tools-theme-component-react": "^0.1.35",
     "postcss-color-rgba-fallback": "^3.0.0",
     "pre-commit": "1.x",
     "react": "^16.0.0",
