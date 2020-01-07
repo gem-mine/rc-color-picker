@@ -1,7 +1,7 @@
 {
   "name": "@gem-mine/rc-color-picker",
   "port": "8000",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "绘色器",
   "license": "MIT",
   "main": "lib/index.js",
